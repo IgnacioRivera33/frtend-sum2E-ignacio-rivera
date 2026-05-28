@@ -58,3 +58,12 @@ Adicionalmente al finalizar todo esto agrega un boton de envio
 
 Boton type="submit" con texto "Solicitar Turno"
 Boton type="reset" con texto "Limpiar formulario".
+
+PROMPT 2.5 
+
+Verifica que los siguentes requisitos esten en orden:
+
+Formulario centrado en pantalla, con ancho maximo de 800px.
+• Cada seccion (fieldset) debe tener estilos visuales diferenciados (borde, fondo suave).
+• Los campos ocultos deben tener display: none; por defecto en CSS.
+• Aplicar estilos de hover y focus en los campos del formulario.

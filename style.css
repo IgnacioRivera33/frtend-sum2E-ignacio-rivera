@@ -303,22 +303,46 @@ img {
   margin: 0;
 }
 
+.form-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-page h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.form-page > p {
+  margin-bottom: 2rem;
+  color: #475569;
+}
+
 .turno-form {
   display: grid;
   gap: 1.5rem;
 }
 
 .turno-form fieldset {
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 2px solid rgba(15, 23, 42, 0.12);
   border-radius: 1rem;
   padding: 1.5rem;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.turno-form fieldset:focus-within {
+  border-color: rgba(59, 130, 246, 0.5);
   background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .turno-form legend {
   font-weight: 700;
   padding: 0 0.5rem;
   color: #0f172a;
+  font-size: 1.1rem;
 }
 
 .form-row {
@@ -337,11 +361,28 @@ img {
 .form-row textarea {
   width: 100%;
   padding: 0.95rem 1rem;
-  border: 1px solid #cbd5e1;
+  border: 1.5px solid #cbd5e1;
   border-radius: 0.85rem;
   font: inherit;
   color: #0f172a;
-  background: #f8fafc;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.form-row input:hover,
+.form-row select:hover,
+.form-row textarea:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-row textarea {
