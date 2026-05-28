@@ -20,15 +20,273 @@
     </div>
   </header>
   <main class="container" style="padding: 4rem 0;">
-    <h1>Solicitar Turno</h1>
-    <p>Gracias por elegir SaludPlus. En breve uno de nuestros agentes se comunicará para confirmar tu turno.</p>
-    <p>Si deseas regresar, <a href="index.html">haz clic aquí</a>.</p>
+    <article class="form-page">
+      <h1>Solicitar Turno</h1>
+      <p>Completa el formulario para solicitar tu turno en SaludPlus.</p>
+
+      <form id="turnoForm" class="turno-form" action="#" method="post">
+        <fieldset>
+          <legend>Datos del paciente</legend>
+
+          <div class="form-row">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="form-row">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" required />
+          </div>
+
+          <div class="form-row">
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" name="dni" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="nacimiento" name="nacimiento" required />
+          </div>
+
+          <div class="form-row">
+            <label for="genero">Género</label>
+            <select id="genero" name="genero" required>
+              <option value="">Seleccionar</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+              <option value="otro">Otro</option>
+              <option value="no_especificar">Prefiero no especificar</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos del turno</legend>
+
+          <div class="form-row">
+            <label for="especialidad">Especialidad</label>
+            <select id="especialidad" name="especialidad" required>
+              <option value="">Seleccionar especialidad</option>
+              <option value="Clinica General">Clínica General</option>
+              <option value="Cardiologia">Cardiología</option>
+              <option value="Pediatria">Pediatría</option>
+              <option value="Ginecologia">Ginecología</option>
+              <option value="Traumatologia">Traumatología</option>
+              <option value="Neurologia">Neurología</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="medico">Médico</label>
+            <select id="medico" name="medico" disabled required>
+              <option value="">Seleccione una especialidad primero</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="consulta">Tipo de consulta</label>
+            <select id="consulta" name="consulta" required>
+              <option value="">Seleccionar tipo</option>
+              <option value="Primera consulta">Primera consulta</option>
+              <option value="Control">Control</option>
+              <option value="Resultado de estudios">Resultado de estudios</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="fecha_turno">Fecha del turno</label>
+            <input type="date" id="fecha_turno" name="fecha_turno" required />
+          </div>
+
+          <div class="form-row">
+            <label for="hora_turno">Hora del turno</label>
+            <input type="time" id="hora_turno" name="hora_turno" required />
+          </div>
+
+          <div class="form-row">
+            <label for="modalidad">Modalidad</label>
+            <select id="modalidad" name="modalidad" required>
+              <option value="">Seleccionar modalidad</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Videoconsulta">Videoconsulta</option>
+            </select>
+          </div>
+
+          <div class="form-row hidden" id="plataforma-group">
+            <label for="plataforma">Plataforma preferida</label>
+            <select id="plataforma" name="plataforma">
+              <option value="">Seleccionar plataforma</option>
+              <option value="Zoom">Zoom</option>
+              <option value="Google Meet">Google Meet</option>
+              <option value="Teams">Teams</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Cobertura médica</legend>
+
+          <div class="form-row">
+            <label for="cobertura">Cobertura</label>
+            <select id="cobertura" name="cobertura" required>
+              <option value="">Seleccionar cobertura</option>
+              <option value="OSDE">OSDE</option>
+              <option value="Swiss Medical">Swiss Medical</option>
+              <option value="Galeno">Galeno</option>
+              <option value="IOMA">IOMA</option>
+              <option value="Medicus">Medicus</option>
+              <option value="Sancor Salud">Sancor Salud</option>
+              <option value="Particular">Particular</option>
+            </select>
+          </div>
+
+          <div class="form-row hidden" id="credencial-group">
+            <label for="credencial">Número de credencial</label>
+            <input type="text" id="credencial" name="credencial" />
+          </div>
+
+          <div class="form-row hidden" id="plan-group">
+            <label for="plan">Plan</label>
+            <input type="text" id="plan" name="plan" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Información adicional</legend>
+
+          <div class="form-row checkbox-row">
+            <input type="checkbox" id="primera-visita" name="primera_visita" />
+            <label for="primera-visita">Es la primera vez que consulta en SaludPlus</label>
+          </div>
+
+          <div class="form-row hidden" id="como-nos-conocio-group">
+            <label for="como-nos-conocio">Cómo nos conoció</label>
+            <select id="como-nos-conocio" name="como_nos_conocio">
+              <option value="">Seleccionar opción</option>
+              <option value="Busqueda en internet">Búsqueda en internet</option>
+              <option value="Recomendacion de un conocido">Recomendación de un conocido</option>
+              <option value="Redes sociales">Redes sociales</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="motivo">Motivo de consulta</label>
+            <textarea id="motivo" name="motivo" rows="4" required></textarea>
+          </div>
+
+          <div class="form-row checkbox-row">
+            <input type="checkbox" id="estudios-previos" name="estudios_previos" />
+            <label for="estudios-previos">Tiene estudios previos relacionados con la consulta</label>
+          </div>
+
+          <div class="form-row hidden" id="descripcion-estudios-group">
+            <label for="descripcion-estudios">Descripción de estudios</label>
+            <textarea id="descripcion-estudios" name="descripcion_estudios" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="reset" class="btn-reset">Limpiar formulario</button>
+          <button type="submit" class="btn-submit">Solicitar Turno</button>
+        </div>
+      </form>
+    </article>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 SaludPlus. Todos los derechos reservados.</p>
       <p>Clínica SaludPlus</p>
     </div>
   </footer>
+
+  <script>
+    const medicosPorEspecialidad = {
+      'Clinica General': ['Dra. Ana Silva', 'Dr. Marcelo Díaz'],
+      Cardiologia: ['Dr. Luis Pérez', 'Dra. Marcela Torres'],
+      Pediatria: ['Dra. Paula Ramírez', 'Dr. Martín Gómez'],
+      Ginecologia: ['Dra. Laura Aguirre', 'Dra. Soledad Vega'],
+      Traumatologia: ['Dr. Carlos Mendoza', 'Dra. Carla Pineda'],
+      Neurologia: ['Dr. Javier Molina', 'Dra. Natalia Costa']
+    };
+
+    const especialidadSelect = document.getElementById('especialidad');
+    const medicoSelect = document.getElementById('medico');
+    const modalidadSelect = document.getElementById('modalidad');
+    const plataformaGroup = document.getElementById('plataforma-group');
+    const coberturaSelect = document.getElementById('cobertura');
+    const credencialGroup = document.getElementById('credencial-group');
+    const planGroup = document.getElementById('plan-group');
+    const primeraVisitaCheckbox = document.getElementById('primera-visita');
+    const comoNosConocioGroup = document.getElementById('como-nos-conocio-group');
+    const estudiosPreviosCheckbox = document.getElementById('estudios-previos');
+    const descripcionEstudiosGroup = document.getElementById('descripcion-estudios-group');
+
+    function actualizarMedicos() {
+      const especialidad = especialidadSelect.value;
+      medicoSelect.innerHTML = '';
+      medicoSelect.disabled = !especialidad;
+
+      if (!especialidad) {
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Seleccione una especialidad primero';
+        medicoSelect.appendChild(placeholder);
+        return;
+      }
+
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = 'Seleccionar médico';
+      medicoSelect.appendChild(placeholder);
+
+      medicosPorEspecialidad[especialidad].forEach(nombre => {
+        const option = document.createElement('option');
+        option.value = nombre;
+        option.textContent = nombre;
+        medicoSelect.appendChild(option);
+      });
+    }
+
+    function actualizarModalidad() {
+      plataformaGroup.classList.toggle('hidden', modalidadSelect.value !== 'Videoconsulta');
+    }
+
+    function actualizarCobertura() {
+      const esParticular = coberturaSelect.value === 'Particular';
+      credencialGroup.classList.toggle('hidden', esParticular);
+      planGroup.classList.toggle('hidden', esParticular);
+    }
+
+    function actualizarPrimeraVisita() {
+      comoNosConocioGroup.classList.toggle('hidden', !primeraVisitaCheckbox.checked);
+    }
+
+    function actualizarEstudiosPrevios() {
+      descripcionEstudiosGroup.classList.toggle('hidden', !estudiosPreviosCheckbox.checked);
+    }
+
+    especialidadSelect.addEventListener('change', actualizarMedicos);
+    modalidadSelect.addEventListener('change', actualizarModalidad);
+    coberturaSelect.addEventListener('change', actualizarCobertura);
+    primeraVisitaCheckbox.addEventListener('change', actualizarPrimeraVisita);
+    estudiosPreviosCheckbox.addEventListener('change', actualizarEstudiosPrevios);
+
+    document.getElementById('turnoForm').addEventListener('reset', () => {
+      medicoSelect.innerHTML = '<option value="">Seleccione una especialidad primero</option>';
+      medicoSelect.disabled = true;
+      plataformaGroup.classList.add('hidden');
+      credencialGroup.classList.add('hidden');
+      planGroup.classList.add('hidden');
+      comoNosConocioGroup.classList.add('hidden');
+      descripcionEstudiosGroup.classList.add('hidden');
+    });
+  </script>
 </body>
 </html>

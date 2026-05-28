@@ -303,6 +303,95 @@ img {
   margin: 0;
 }
 
+.turno-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.turno-form fieldset {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+.turno-form legend {
+  font-weight: 700;
+  padding: 0 0.5rem;
+  color: #0f172a;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.85rem;
+  font: inherit;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-reset,
+.btn-submit {
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+}
+
+.btn-reset {
+  background: #e2e8f0;
+  color: #1f2937;
+}
+
+.btn-submit {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.btn-reset:hover {
+  background: #cbd5e1;
+}
+
+.btn-submit:hover {
+  background: #111827;
+}
+
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
