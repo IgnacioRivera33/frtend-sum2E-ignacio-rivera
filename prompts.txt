@@ -112,3 +112,6 @@ Seccion 4 - Informacion adicional
 • Motivo de consulta: obligatorio, minimo 20 caracteres.
 • Descripcion de estudios: obligatoria si el checkbox de estudios previos esta marcado; minimo 20
 caracteres.
+
+PROMPT 5 
+Necesito que verifiques un error que ocurre al momento de seleccionar una especialidad, ya que no permite seleccionar al medico
