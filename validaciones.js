@@ -3,17 +3,17 @@ const patrones = {
   nombre: /^[a-zA-ZáéíóúñÁÉÍÓÚÑ\s]+$/,
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   telefono: /^[\d\s+\-()]+$/, // Permite dígitos, espacios, +, -, ()
-  dni: /^\d{7,8}$/
+  rut: /^\d{7,8}$/
 };
 
 // Objeto con médicos por especialidad
 const medicosPorEspecialidad = {
-  'Clinica General': ['Dra. Ana Silva', 'Dr. Marcelo Díaz'],
-  'Cardiologia': ['Dr. Luis Pérez', 'Dra. Marcela Torres'],
-  'Pediatria': ['Dra. Paula Ramírez', 'Dr. Martín Gómez'],
-  'Ginecologia': ['Dra. Laura Aguirre', 'Dra. Soledad Vega'],
-  'Traumatologia': ['Dr. Carlos Mendoza', 'Dra. Carla Pineda'],
-  'Neurologia': ['Dr. Javier Molina', 'Dra. Natalia Costa']
+  'clinica': ['Dr. Gomez, Carlos', 'Dra. Lopez, Maria'],
+  'cardiologia': ['Dr. Perez, Juan', 'Dra. Torres, Ana'],
+  'pediatria': ['Dra. Diaz, Laura', 'Dr. Soto, Pablo'],
+  'ginecologia': ['Dra. Romero, Valeria', 'Dra. Castro, Elena'],
+  'traumatologia': ['Dr. Ramos, Sergio', 'Dr. Herrera, Diego'],
+  'neurologia': ['Dr. Molina, Javier', 'Dra. Costa, Natalia']
 };
 
 // Funciones de validación individuales
@@ -34,9 +34,9 @@ const validaciones = {
     return { valido: true };
   },
 
-  dni(valor) {
+  rut(valor) {
     if (!valor.trim()) return { valido: false, mensaje: 'El RUT es obligatorio' };
-    if (!patrones.dni.test(valor)) {
+    if (!patrones.rut.test(valor)) {
       return { valido: false, mensaje: 'El RUT debe contener 7 u 8 dígitos' };
     }
     return { valido: true };
@@ -242,7 +242,7 @@ function validarFormulario(event) {
   // Datos del paciente
   const nombre = document.getElementById('nombre');
   const apellido = document.getElementById('apellido');
-  const dni = document.getElementById('dni');
+  const rut = document.getElementById('rut');
   const email = document.getElementById('email');
   const telefono = document.getElementById('telefono');
   const nacimiento = document.getElementById('nacimiento');
@@ -268,14 +268,14 @@ function validarFormulario(event) {
     mostrarOk(apellido);
   }
 
-  // Validar DNI
-  const resultDni = validaciones.dni(dni.value);
-  if (!resultDni.valido) {
-    mostrarError(dni, resultDni.mensaje);
+  // Validar RUT
+  const resultRut = validaciones.rut(rut.value);
+  if (!resultRut.valido) {
+    mostrarError(rut, resultRut.mensaje);
     formularioValido = false;
-    if (!primerCampoInvalido) primerCampoInvalido = dni;
+    if (!primerCampoInvalido) primerCampoInvalido = rut;
   } else {
-    mostrarOk(dni);
+    mostrarOk(rut);
   }
 
   // Validar email

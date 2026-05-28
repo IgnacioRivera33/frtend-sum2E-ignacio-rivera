@@ -139,3 +139,19 @@ y el numero de turno generado.
 Objeto de medicos por especialidad
 Define en validaciones.js un objeto JavaScript con la siguiente estructura (completa con al menos 2 medicos
 por especialidad):
+
+PROMPT 7
+
+Completa lo siguente
+Objeto de medicos por especialidad
+Define en validaciones.js un objeto JavaScript con la siguiente estructura (completa con al menos 2 medicos
+por especialidad):
+const medicosPorEspecialidad = {
+"clinica": ["Dr. Gomez, Carlos", "Dra. Lopez, Maria"],
+"cardiologia": ["Dr. Perez, Juan", "Dra. Torres, Ana"],
+"pediatria": ["Dra. Diaz, Laura", "Dr. Soto, Pablo"],
+"ginecologia": ["Dra. Romero, Valeria", "Dra. Castro, Elena"],
+"traumatologia": ["Dr. Ramos, Sergio", "Dr. Herrera, Diego"],
+"neurologia"
+
+y verifica que todos los datos que digan ´DNI´ o ´dni´ sean cambiados por RUT
