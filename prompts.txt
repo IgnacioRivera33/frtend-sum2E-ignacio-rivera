@@ -1,0 +1,14 @@
+PROMPT 1
+
+Necesito que desarrolles la pagina principal para el sitio llamado SaludPlus, se necesitan los siguentes requisitos:
+- Un header que contenga el logo de la clinica "SaludPlus" un menu de navegacion con enlaces a las secciones de la pagina (Inicio, especialidades, medicos, obras sociales, contacto) y el menu debe permanecer visible al momento de hacer scroll.
+
+- Una seccion Hero con un fondo de un color degradado (para CSS), un titulo principal y subtitulo descriptivo, un boton de llamada a la accion que se llame "Solicitar turno" y permita redirigir a turnos.html, ademas de indicadores de confianza, con al menos 3 datos destacados de la clinica.
+
+- Una grilla con al menos 6 especialidades medicas, cada uno debe tener un icono representativo, un nombre y una breve descripcion. (implementado con CSS Grid)
+
+- Seccion con al menos 3 profesionales medicos, que incluya un nombre completo,la especialidad del medico y una breve descripcion ademas de un placeholder de su imagen, Layout con flexbox
+
+- Seccion de obras sociales con al menos 6 obras sociales aceptadas de la clinica, cada una con una presentacion clara y precisa
+
+- Finalmente una seccion de contactos que incluya datos de contacto (numero, email, direccion y horario de atencion) un mapa placeholder y un footer con los derechos reservados y de un autor ficticio 
