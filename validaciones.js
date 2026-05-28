@@ -237,11 +237,12 @@ function validarFormulario(event) {
 
   const form = document.getElementById('turnoForm');
   let formularioValido = true;
+  let primerCampoInvalido = null;
 
   // Datos del paciente
   const nombre = document.getElementById('nombre');
   const apellido = document.getElementById('apellido');
-  const dni = document.getElementById('RUT');
+  const dni = document.getElementById('dni');
   const email = document.getElementById('email');
   const telefono = document.getElementById('telefono');
   const nacimiento = document.getElementById('nacimiento');
@@ -252,6 +253,7 @@ function validarFormulario(event) {
   if (!resultNombre.valido) {
     mostrarError(nombre, resultNombre.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = nombre;
   } else {
     mostrarOk(nombre);
   }
@@ -261,6 +263,7 @@ function validarFormulario(event) {
   if (!resultApellido.valido) {
     mostrarError(apellido, resultApellido.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = apellido;
   } else {
     mostrarOk(apellido);
   }
@@ -270,6 +273,7 @@ function validarFormulario(event) {
   if (!resultDni.valido) {
     mostrarError(dni, resultDni.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = dni;
   } else {
     mostrarOk(dni);
   }
@@ -279,6 +283,7 @@ function validarFormulario(event) {
   if (!resultEmail.valido) {
     mostrarError(email, resultEmail.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = email;
   } else {
     mostrarOk(email);
   }
@@ -288,6 +293,7 @@ function validarFormulario(event) {
   if (!resultTelefono.valido) {
     mostrarError(telefono, resultTelefono.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = telefono;
   } else {
     mostrarOk(telefono);
   }
@@ -297,6 +303,7 @@ function validarFormulario(event) {
   if (!resultNacimiento.valido) {
     mostrarError(nacimiento, resultNacimiento.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = nacimiento;
   } else {
     mostrarOk(nacimiento);
   }
@@ -306,6 +313,7 @@ function validarFormulario(event) {
   if (!resultGenero.valido) {
     mostrarError(genero, resultGenero.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = genero;
   } else {
     mostrarOk(genero);
   }
@@ -324,6 +332,7 @@ function validarFormulario(event) {
   if (!resultEspecialidad.valido) {
     mostrarError(especialidad, resultEspecialidad.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = especialidad;
   } else {
     mostrarOk(especialidad);
   }
@@ -333,6 +342,7 @@ function validarFormulario(event) {
   if (!resultMedico.valido) {
     mostrarError(medico, resultMedico.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = medico;
   } else {
     mostrarOk(medico);
   }
@@ -342,6 +352,7 @@ function validarFormulario(event) {
   if (!resultConsulta.valido) {
     mostrarError(consulta, resultConsulta.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = consulta;
   } else {
     mostrarOk(consulta);
   }
@@ -351,6 +362,7 @@ function validarFormulario(event) {
   if (!resultFechaTurno.valido) {
     mostrarError(fecha_turno, resultFechaTurno.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = fecha_turno;
   } else {
     mostrarOk(fecha_turno);
   }
@@ -360,6 +372,7 @@ function validarFormulario(event) {
   if (!resultHoraTurno.valido) {
     mostrarError(hora_turno, resultHoraTurno.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = hora_turno;
   } else {
     mostrarOk(hora_turno);
   }
@@ -369,6 +382,7 @@ function validarFormulario(event) {
   if (!resultModalidad.valido) {
     mostrarError(modalidad, resultModalidad.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = modalidad;
   } else {
     mostrarOk(modalidad);
   }
@@ -378,6 +392,7 @@ function validarFormulario(event) {
   if (!resultPlataforma.valido) {
     mostrarError(plataforma, resultPlataforma.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = plataforma;
   } else if (modalidad.value === 'Videoconsulta' && plataforma.value) {
     mostrarOk(plataforma);
   }
@@ -392,6 +407,7 @@ function validarFormulario(event) {
   if (!resultCobertura.valido) {
     mostrarError(cobertura, resultCobertura.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = cobertura;
   } else {
     mostrarOk(cobertura);
   }
@@ -401,6 +417,7 @@ function validarFormulario(event) {
   if (!resultCredencial.valido) {
     mostrarError(credencial, resultCredencial.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = credencial;
   } else if (cobertura.value !== 'Particular' && credencial.value) {
     mostrarOk(credencial);
   }
@@ -410,6 +427,7 @@ function validarFormulario(event) {
   if (!resultPlan.valido) {
     mostrarError(plan, resultPlan.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = plan;
   } else if (cobertura.value !== 'Particular' && plan.value) {
     mostrarOk(plan);
   }
@@ -426,6 +444,7 @@ function validarFormulario(event) {
   if (!resultComoNosConocio.valido) {
     mostrarError(comoNosConocio, resultComoNosConocio.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = comoNosConocio;
   } else if (primeraVisita.checked && comoNosConocio.value) {
     mostrarOk(comoNosConocio);
   }
@@ -435,6 +454,7 @@ function validarFormulario(event) {
   if (!resultMotivo.valido) {
     mostrarError(motivo, resultMotivo.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = motivo;
   } else {
     mostrarOk(motivo);
   }
@@ -444,14 +464,44 @@ function validarFormulario(event) {
   if (!resultDescripcionEstudios.valido) {
     mostrarError(descripcionEstudios, resultDescripcionEstudios.mensaje);
     formularioValido = false;
+    if (!primerCampoInvalido) primerCampoInvalido = descripcionEstudios;
   } else if (estudiosPrevios.checked && descripcionEstudios.value) {
     mostrarOk(descripcionEstudios);
   }
 
   if (formularioValido) {
-    alert('Formulario enviado correctamente');
-    form.reset();
+    // Generar número de turno
+    const numeroTurno = 'TURN-' + Math.floor(Math.random() * 100000).toString().padStart(5, '0');
+    
+    // Ocultar el formulario
+    const formPage = document.querySelector('.form-page');
+    formPage.style.display = 'none';
+    
+    // Crear y mostrar mensaje de confirmación
+    const confirmacion = document.createElement('div');
+    confirmacion.className = 'confirmacion-turno';
+    confirmacion.innerHTML = `
+      <div class="confirmacion-contenido">
+        <h2>✓ Turno solicitado exitosamente</h2>
+        <div class="confirmacion-datos">
+          <p><strong>Número de turno:</strong> ${numeroTurno}</p>
+          <p><strong>Paciente:</strong> ${nombre.value} ${apellido.value}</p>
+          <p><strong>Especialidad:</strong> ${especialidad.value}</p>
+          <p><strong>Fecha del turno:</strong> ${fecha_turno.value}</p>
+          <p><strong>Hora del turno:</strong> ${hora_turno.value}</p>
+        </div>
+        <p class="confirmacion-mensaje">En breve recibirás una confirmación por email a <strong>${email.value}</strong></p>
+        <a href="index.html" class="btn-volver">Volver a la página principal</a>
+      </div>
+    `;
+    
+    const main = document.querySelector('main');
+    main.appendChild(confirmacion);
   } else {
+    // Desplazarse al primer campo inválido
+    if (primerCampoInvalido) {
+      primerCampoInvalido.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     alert('Por favor, corrija los errores del formulario');
   }
 }

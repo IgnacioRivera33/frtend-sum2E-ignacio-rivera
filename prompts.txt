@@ -115,3 +115,27 @@ caracteres.
 
 PROMPT 5 
 Necesito que verifiques un error que ocurre al momento de seleccionar una especialidad, ya que no permite seleccionar al medico
+
+PROMPT 6
+
+Verifica y agrega los siguentes condicionales Comportamiento del formulario
+Campos condicionales
+Los siguientes campos deben mostrarse y ocultarse dinamicamente mediante JavaScript (modificando
+display: none / display: block):
+• Medico: se habilita y actualiza sus opciones cuando el usuario selecciona una especialidad.
+• Plataforma preferida: se muestra solo cuando la modalidad seleccionada es "Videoconsulta".
+• Numero de credencial y Plan: se muestran cuando la cobertura es distinta de "Particular".
+• Como nos conocio: se muestra cuando el checkbox de primera visita esta marcado.
+• Descripcion de estudios: se muestra cuando el checkbox de estudios previos esta marcado.
+Manejo del submit
+• Usar preventDefault() para evitar el envio del formulario por defecto.
+• Recorrer todos los campos y aplicar campo-error o campo-ok segun corresponda.
+• Si existe al menos un error, usar element.scrollIntoView({ behavior: "smooth" }) para desplazarse al
+primer campo invalido.
+• Si todos los campos son validos, mostrar un mensaje de confirmacion en pantalla con un numero de
+turno generado con Math.random() (formato: TURN-XXXXX, donde X son digitos).
+• El mensaje de confirmacion debe incluir: nombre del paciente, especialidad, fecha y hora del turno,
+y el numero de turno generado.
+Objeto de medicos por especialidad
+Define en validaciones.js un objeto JavaScript con la siguiente estructura (completa con al menos 2 medicos
+por especialidad):
